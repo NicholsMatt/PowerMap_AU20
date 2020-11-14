@@ -1,0 +1,51 @@
+List<JSONObject> poles; //List of all the poles as json objects
+    JSONObject p; //Current pole we are trying to add
+    JSONArray jsonArray = (JSONArray) p.get("coordinates");
+    double lat = (double) jsonArray[0];
+    double lon = (double) jsonArray[1];
+    int sameAs = sameAs(poles, lon, lat);
+    
+    if(sameAs!=0){
+        JSONObject p1 = (JSONObject) poles.get(sameAs);
+        JSONArray jsonArray = (JSONArray) p1.get("pole_names");
+        JSONArray jsonArray2 = new JSONArray[jsonArray.length+1];
+        for(int i=0; i<jsonArray.length(); i++){
+            jsonArray2[i] = jsonArray[i];
+        }
+        //How do you get the name of the pole currently being analyzed?
+        jsonArray2[jsonArray2.length()-1] = p.poleName();
+        p1.set("pole_names", jsonArray2);
+
+    }
+
+    //Checks to see if the pole being analyzed is the same as one already in the list and returns the number of the pole it is
+    //the same as
+    public int sameAs(List<JSONObject> poles,double lon,double lat){
+        int id = 0;
+        for(int i=0; i<poles.size(); i++){
+            JSONObject p = (JSONObject) poles.get(i);
+            JSONArray jsonArray = (JSONArray) p.get("coordinates");
+            double lat1 = fourDecimals(jsonArray[0]);
+            double lon1 = fourDecimals(jsonArray[1]);
+            double lat4 = fourDecimals(lat);
+            double lon4 = fourDecimals(lon);
+
+            if(lat1==lat4 && lon4==lon4){
+                id = p.get("id");
+            }
+        }
+        return id;
+    }
+
+    //returns d with only 4 decimal places
+public double fourDecimals(double d){
+    String s = d.toString();
+    double d1;
+    if(s.charAt(0)=='-'){
+        d1=Double.parseDouble(s.substring(0,8))
+    }
+    else{
+        d1=Double.parseDouble(s.substring(0,7))
+    }
+    return d1;
+}

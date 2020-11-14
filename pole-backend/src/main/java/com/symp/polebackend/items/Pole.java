@@ -9,7 +9,7 @@ public class Pole {
 
     public Pole() {}
 
-    public Pole(long id, double lon, double lat) {
+    public Pole(long id, double lat, double lon) {
         this.id = id;
         this.lon = lon;
         this.lat = lat;

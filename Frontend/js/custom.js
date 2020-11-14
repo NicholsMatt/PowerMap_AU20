@@ -49,7 +49,7 @@ function initMap() {
   const centralOhio = {lat: 39.960770, lng: -82.999038};
 
    const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 9,
+    zoom: 11,
     center: centralOhio,
 
     //Move zoom controls to top left
@@ -73,7 +73,7 @@ function initMap() {
   //Set icons for different kinds of power pole markers
   const icons = {
       lowVoltage: {
-          icon: "images/pole_white.png",
+          icon: "images/lowVoltage.png",
       },
   };
 
@@ -111,7 +111,7 @@ function unhidePanel() {
         x.style.display = "block";
     } 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn’t send Access-Control-*
+    const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesnï¿½t send Access-Control-*
     fetch(proxyurl + url).then(function (response) {
         // response.json() returns a promise, use the same .then syntax to work with the results
         response.json().then(function (poledata) {
@@ -125,7 +125,7 @@ function unhidePanel() {
         });
         //.then(response => response.text())
         //.then(contents => console.log(contents))
-        }).catch(() => console.log("Can’t access " + url))
+        }).catch(() => console.log("Canï¿½t access " + url))
       
 
        

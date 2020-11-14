@@ -36,12 +36,11 @@ $(function() {
 
 
 /*
-
 ******************
 * CODE FROM MATT *
 ******************
-
 */
+
 let map;
 
 function initMap() {
@@ -52,6 +51,15 @@ function initMap() {
    const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 9,
     center: centralOhio,
+
+    //Move zoom controls to top left
+    zoomControl: true,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_LEFT,
+    },
+
+    //Enable/disable fullscreen button
+    fullscreenControl: false //CURRENTLY CANNOT MOVE TO TOP LEFT
   });
 
   //Text for pop-up
@@ -94,8 +102,4 @@ function initMap() {
         infowindow.open(map, marker);
     });
   }
-  
-
- 
-  
 }

@@ -98,7 +98,7 @@ async function initMap() {
 */
     var loc_json;
     const polesURL = base_URL + 'poles';
-    //const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn�t send Access-Control-*
+   
     
      await fetch(polesURL).then( async function (response) {
         // response.json() returns a promise, use the same .then syntax to work with the results
@@ -131,16 +131,22 @@ getCoords()
         loc_json[i].pole_data.coordinates[1] = b;
         console.log(loc_json[i].pole_data.coordinates)
         positionA = { lat: loc_json[i].pole_data.coordinates[0], lng: loc_json[i].pole_data.coordinates[1] }
+        
     const marker = new google.maps.Marker({
         position: positionA,
         title: "Low Voltage Power Pole",
         icon: icons["lowVoltage"].icon,
-    map: map,
+        store_id: i+1,
+        map: map,
      });
-
+     
      marker.addListener("click", () => {
         //infowindow.open(map, marker);
-         unhidePanel();
+         id = marker.get('store_id');
+         console.log(id)
+        
+
+         unhidePanel(id);
     });
   }
 }
@@ -161,7 +167,7 @@ const request = async () => {
 
 }
 
-function unhidePanel() {
+function unhidePanel( id) {
     var x = document.getElementById("info-panel");
     //load data
     if (x.style.display === "none") {
@@ -169,6 +175,7 @@ function unhidePanel() {
     } 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn�t send Access-Control-*
+
     fetch(proxyurl + url).then(function (response) {
         // response.json() returns a promise, use the same .then syntax to work with the results
         response.json().then(function (poledata) {
@@ -176,7 +183,10 @@ function unhidePanel() {
             //poledata.forEach(function (data) {
             //    console.log(user.name)
             //});
-           
+
+            //set overall data for pole
+
+            document.getElementById("pole_id").innerHTML = id;
             document.getElementById("voltage").innerHTML = poledata.image.fov;
             console.log(poledata)
         });
@@ -187,6 +197,10 @@ function unhidePanel() {
 
        
     };
+
+
+//onclick set specific pole data
+
 
 
 //document.getElementById("close_info").onclick() = function () {

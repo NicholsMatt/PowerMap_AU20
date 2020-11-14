@@ -112,12 +112,23 @@ function unhidePanel() {
     } 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn’t send Access-Control-*
-    fetch(proxyurl + url)
-        .then(response => response.text())
-        .then(contents => console.log(contents))
-        .catch(() => console.log("Can’t access " + url))
-        var jsonobj = JSON.parse(contents);
-        document.getElementById("voltage").innerHTML = jsonobj.image.fov;
+    fetch(proxyurl + url).then(function (response) {
+        // response.json() returns a promise, use the same .then syntax to work with the results
+        response.json().then(function (poledata) {
+            // users is now our actual variable parsed from the json, so we can use it
+            //poledata.forEach(function (data) {
+            //    console.log(user.name)
+            //});
+           
+            document.getElementById("voltage").innerHTML = poledata.image.fov;
+            console.log(poledata)
+        });
+        //.then(response => response.text())
+        //.then(contents => console.log(contents))
+        }).catch(() => console.log("Can’t access " + url))
+      
+
+       
     };
 
 

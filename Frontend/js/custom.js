@@ -42,8 +42,8 @@ $(function() {
 */
 
 let map;
-
-function initMap() {
+var base_URL = 'http://187e5f2f3ea8.ngrok.io/';
+async function initMap() {
 
   //Central Ohio location
   const centralOhio = {lat: 39.960770, lng: -82.999038};
@@ -76,7 +76,7 @@ function initMap() {
           icon: "images/lowVoltage.png",
       },
   };
-
+    /*
   const features = [
     {
         position: {lat: 39.91868883204806, lng:-82.86456906501846},
@@ -88,13 +88,53 @@ function initMap() {
         type: "lowVoltage",
     },
   ];
+  
+  const polesURL = base_URL + 'poles';
+ fetch(polesURL)
+        .then(res => res.json())
+        .then((out) => {
+            loc_json = out;
+        }).catch(err => console.error(err));
+*/
+    var loc_json;
+    const polesURL = base_URL + 'poles';
+    //const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn�t send Access-Control-*
+    
+     await fetch(polesURL).then( async function (response) {
+        // response.json() returns a promise, use the same .then syntax to work with the results
+         await response.json().then(async function (poledata) {
+            // users is now our actual variable parsed from the json, so we can use it
+            //poledata.forEach(function (data) {
+            //    console.log(user.name)
+            //});
 
+            //document.getElementById("voltage").innerHTML = poledata.image.fov;
+            console.log(poledata);
+            loc_json = poledata;
+            await console.log(loc_json);
+        });
+        //.then(response => response.text())
+        //.then(contents => console.log(contents))
+    }).catch(() => console.log("Can't access " + url))
+    /*
+getCoords()
+        .then(data => loc_json)
+    console.log(loc_json)
+    */
+   // await request();
   //Create markers
-  for(let i = 0; i < features.length; i++){
+    console.log('test1');
+    for (let i = 0; i < loc_json.length; i++){
+        
+        var b = loc_json[i].pole_data.coordinates[0];
+        loc_json[i].pole_data.coordinates[0] = loc_json[i].pole_data.coordinates[1];
+        loc_json[i].pole_data.coordinates[1] = b;
+        console.log(loc_json[i].pole_data.coordinates)
+        positionA = { lat: loc_json[i].pole_data.coordinates[0], lng: loc_json[i].pole_data.coordinates[1] }
     const marker = new google.maps.Marker({
-    position: features[i].position,
-    title: "Low Voltage Power Pole",
-    icon: icons[features[i].type].icon,
+        position: positionA,
+        title: "Low Voltage Power Pole",
+        icon: icons["lowVoltage"].icon,
     map: map,
      });
 
@@ -104,6 +144,23 @@ function initMap() {
     });
   }
 }
+
+
+async function getCoords() {
+    const polesURL = base_URL + 'poles';
+    let response = await fetch(polesURL);
+    let data = await response.json()
+    return data;
+}
+const request = async () => {
+    const polesURL = base_URL + 'poles';
+    const response = await fetch(polesURL);
+    const json = await response.json();
+    console.log(json);
+    return json;
+
+}
+
 function unhidePanel() {
     var x = document.getElementById("info-panel");
     //load data
@@ -125,7 +182,7 @@ function unhidePanel() {
         });
         //.then(response => response.text())
         //.then(contents => console.log(contents))
-        }).catch(() => console.log("Can�t access " + url))
+        }).catch(() => console.log("Can't access " + url))
       
 
        

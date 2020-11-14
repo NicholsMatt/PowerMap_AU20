@@ -34,6 +34,14 @@ $(function() {
 
 });
 
+
+/*
+
+******************
+* CODE FROM MATT *
+******************
+
+*/
 let map;
 
 function initMap() {
@@ -46,13 +54,48 @@ function initMap() {
     center: centralOhio,
   });
 
-  //Marker for power pole
-  //const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-  const image = "images/pole_white.png";
+  //Text for pop-up
+  const contentString = '<h1 id = "firstHeading" class="firstHeading">Low Voltage Pole</h1>' 
+                        + "<p><b>This is where we would put data for the power pole. yeeee.</p>" + "</div>" + "</div>";
 
-  const poleMarker = new google.maps.Marker({
-    position: {lat: 39.91868883204806, lng:-82.86456906501846},
-    map,
-    icon: image,
+  const infowindow = new google.maps.InfoWindow({
+      content: contentString,
   });
+
+  //Set icons for different kinds of power pole markers
+  const icons = {
+      lowVoltage: {
+          icon: "images/pole_white.png",
+      },
+  };
+
+  const features = [
+    {
+        position: {lat: 39.91868883204806, lng:-82.86456906501846},
+        type: "lowVoltage",
+    },
+
+    {
+        position: {lat: 39.94988474261101, lng:-83.17941221349473},
+        type: "lowVoltage",
+    },
+  ];
+
+  //Create markers
+  for(let i = 0; i < features.length; i++){
+    const marker = new google.maps.Marker({
+    position: features[i].position,
+    title: "Low Voltage Power Pole",
+    icon: icons[features[i].type].icon,
+    map: map,
+     });
+
+     marker.addListener("click", () => {
+        infowindow.open(map, marker);
+    });
+  }
+  
+
+ 
+  
 }

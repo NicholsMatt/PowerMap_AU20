@@ -99,7 +99,34 @@ function initMap() {
      });
 
      marker.addListener("click", () => {
-        infowindow.open(map, marker);
+        //infowindow.open(map, marker);
+         unhidePanel();
     });
   }
+}
+function unhidePanel() {
+    var x = document.getElementById("info-panel");
+    //load data
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } 
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn’t send Access-Control-*
+    fetch(proxyurl + url)
+        .then(response => response.text())
+        .then(contents => console.log(contents))
+        .catch(() => console.log("Can’t access " + url))
+        var jsonobj = JSON.parse(contents);
+        document.getElementById("voltage").innerHTML = jsonobj.image.fov;
+    };
+
+
+//document.getElementById("close_info").onclick() = function () {
+//    x.style.display == "none"
+//    } 
+//}
+document.getElementById("close_info").onclick = function () { hidePanel() };
+
+function hidePanel() {
+    document.getElementById("info-panel").style.display = "none";
 }

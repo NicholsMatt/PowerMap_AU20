@@ -1,4 +1,4 @@
-package com.symp.polebackend.repository;
+package com.symp.polebackend.repositories;
 
 import com.symp.polebackend.items.Pole;
 import org.springframework.data.mongodb.repository.MongoRepository;

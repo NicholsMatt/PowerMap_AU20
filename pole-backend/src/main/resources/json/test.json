@@ -1,17 +1,16 @@
-[
-	{
-		"id": 2,
-		"lon": -83.0312,
-		"lat": 39.23452
-	},
-	{
-		"id": 3,
-		"lon": -83.3195,
-		"lat": 39.6183
-	},
-	{
-		"id": 4,
-		"lon": -81.0312,
-		"lat": 33.23452
+{
+	"id": 1,
+	"pole_data": {
+		"coordinates": [
+			-82.86456906501846,
+			39.91868883204806
+		],
+		"last_maintenance_date": "2012-04-23T18:25:43",
+		"pole_names": [
+			"000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76",
+			"000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-77"
+		],
+		"voltage": "low",
+		"issue": 0
 	}
-]
+}

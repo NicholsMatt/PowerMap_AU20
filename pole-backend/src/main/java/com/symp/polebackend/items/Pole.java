@@ -7,6 +7,8 @@ public class Pole {
     private double lon;
     private double lat;
 
+    public Pole() {}
+
     public Pole(long id, double lon, double lat) {
         this.id = id;
         this.lon = lon;
@@ -25,7 +27,7 @@ public class Pole {
         return lon;
     }
 
-    public void setLon(float lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
 
@@ -33,7 +35,7 @@ public class Pole {
         return lat;
     }
 
-    public void setLat(float lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 }

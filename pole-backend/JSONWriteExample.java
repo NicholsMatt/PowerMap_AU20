@@ -18,7 +18,9 @@ public class JSONWriteExample
 		//Create JSON
 		JSONObject jo = new JSONObject(); 
 
-
+/**
+All these numbers are from one of the json given to us. We can replace these with numbers we read 
+*/
 		Map m = new LinkedHashMap(10); 
 			m.put("width", 3000); 
 			m.put("height", 4000); 

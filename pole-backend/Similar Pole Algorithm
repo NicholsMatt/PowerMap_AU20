@@ -1,0 +1,61 @@
+/**
+Algorithm to identify which other poles in the database are the same object as the one we passed in
+For now I stored all the poles in a map. This can be changed to match whatever database style we eventually use.
+What it returns is a list of pole ids which are the same as the one we passed in. The return type can also be changed
+I'm pretty sure this isn't the most efficient way to do it but hopefully it works
+*/
+
+Map<int, double[2]> cords; //Map containing all the poles and their coordinates
+List<double> lats = fillList(cords,0); //List of all lats upto 4 decimal places in order of pole no.
+List<double> longs = fillList(cords,1); //List of all longs upto 4 decimal places in order of pole no.
+List<double> longTrash; //List where the longs that are taken out are put before they are put back in
+List<double> latTrash; //List where the lats that are taken out are put before they are put back in
+
+//Returns a list with numbers of the poles that are similar to parameter
+public List<int> returnSimilarItems(int num){
+    List<int> l = new List<int>(); 
+    double[2] c = cords.get(num);
+    //at & long of parameter pole upto 4 decimals
+    double lat = c[0].fourDecimals();
+    double long = c[1].fourDecimals();
+    //Goes through the list of longs and lats and compares
+    for (int i=0; i<cords.size(); i++){
+    while(lats.contains(lat) && longs.contains(long)){
+        latIndex = lats.indexOf(lat);
+        longIndex = longs.indexOf(long);
+        //This means this pole has been found in the database. Now the number of the matching pole is added to the list
+        if(latIndex==longIndex){
+                l.add(latIndex); 
+                //Removes the found long and lat so they aren't read again. They're added back in later for further searches
+                longTrash.add(longs.remove(longIndex);
+                latTrash.add(lats.remove(latIndex);
+        }
+    }
+    }
+    longs.add(longTrash);
+    lats.add(latTrash);
+    return l;
+}
+
+//returns d with only 4 decimal places
+public double fourDecimals(double d){
+    String s = d.toString();
+    double d1;
+    if(s.charAt(0)=='-'){
+        d1=Double.parseDouble(s.substring(0,8))
+    }
+    else{
+        d1=Double.parseDouble(s.substring(0,7))
+    }
+    return d1;
+}
+
+//Fills list with latitudes or longitudes upto 4 decimals
+public List<double> fillList(Map<int, double[2]> cords,x){
+    List<double> l = new List<double>();
+    for(int i=0; i<cords.size(); i++){
+        double[2] c = cords.get(i+1);
+        l.add(c[x].fourDecimals());
+    }
+    return l;
+}

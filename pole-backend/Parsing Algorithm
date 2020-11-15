@@ -1,0 +1,65 @@
+/**
+What this does is takes one json file, pulls out the latitude and longitude, adds a unique id and makes a pole object.
+For now it also adds it to a Map that I'm using to store the poles locally. I use the map to find the similar poles later.
+We can get rid of the map later and replace it with whatever database style we want to use as long as the logic works
+*/
+
+import java.io.FileReader;
+import org.json.simple.parser.JSONParser;
+
+String json = parser.parse(new FileReader("myJSON.json"));
+Map<long, double[2]> cords; //Map with pole ids and an array containing cordinates
+
+
+//Find latitude and longitude from String and puts the pole in the map
+public void putInMap(String s){
+    double lat, long;
+
+//This loop pulls out latitude from json
+for(int i=0; i<s.length(); i++){
+    if(s.charAt(i)=='l'){
+        if(s.substring(i,i+8).equals("latitude")){
+            String l = s.charAt(i+11);
+            int j=i+11;
+            while(s.charAt(j)!=','){
+                l+=s.charAt(j);
+            }
+            lat = Double.parseDouble(l);
+            break;
+        }
+    }
+}
+
+//This loop pulls out longitude from json
+for(int i=0; i<s.length(); i++){
+    if(s.charAt(i)=='l'){
+        if(s.substring(i,i+9).equals("longitude")){
+            String l = s.charAt(i+12);
+            int j=i+11;
+            while(s.charAt(j)!=','){
+                l+=s.charAt(j);
+            }
+            long = Double.parseDouble(l);
+            break;
+        }
+    }
+}
+
+double[] c = {lat,long};
+
+//This adds a random unique id to the pole
+
+long id = 10000;
+
+//Checks to see if id is unique
+while(cords.containsKey(id)){
+    id++;
+}
+
+//adds the pole id and cordinates to the map
+cords.add(id,c);
+
+//creates Pole object. I don't know what exactly this object will be used for as of now.
+
+Pole p = new Pole(id,lat,long);
+}

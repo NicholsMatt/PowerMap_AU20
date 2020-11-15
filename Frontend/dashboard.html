@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta name="robots" content="noindex,nofollow">
+    <title></title>
+    <link rel="canonical" href="" />
+    <!-- Favicon icon -->
+    <!-- Custom CSS -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="dashboard.html">
+                        <!-- Logo icon -->
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text" style="height: 60px">
+                            <!-- dark Logo text -->
+                            <img src="images/1280px-AEP_logo.svg.png" alt="homepage" style="height:90%" />
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                       href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
+                               href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ml-auto d-flex align-items-center">
+
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <!--
+                        <li class=" in">
+                            <form role="search" class="app-search d-none d-md-block mr-3">
+                                <input type="text" placeholder="Search..." class="form-control mt-0">
+                                <a href="" class="active">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li>
+                            <a class="profile-pic" href="#">
+                                <span class="text-white font-medium">Jon</span>
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                               aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                               aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Profile</span>
+                            </a>
+                        </li>
+                        <!--
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                               aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Basic Table</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                               aria-expanded="false">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <span class="hide-menu">Google Map</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
+                               aria-expanded="false">
+                                <i class="fa fa-columns" aria-hidden="true"></i>
+                                <span class="hide-menu">Blank Page</span>
+                            </a>
+                        </li>
+                        -->
+
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title text-uppercase font-medium font-14">Dashboard</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <ol class="breadcrumb ml-auto">
+                            </ol>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Three charts -->
+                <!-- ============================================================== -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Issues Reported</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash">
+                                        <canvas width="67" height="30"
+                                                style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ml-auto"><span class="counter text-success">3</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Total Submissions</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash2">
+                                        <canvas width="67" height="30"
+                                                style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ml-auto"><span class="counter text-purple">130</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Number of Unique Poles</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <div id="sparklinedash3">
+                                        <canvas width="67" height="30"
+                                                style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    </div>
+                                </li>
+                                <li class="ml-auto">
+                                    <span class="counter text-info">16</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Network Map</h3>
+                            <div id="map" class="gmaps" style="height: 750px; position: relative; overflow: hidden;">
+
+                                <!--
+                                <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+
+
+
+                                </div>
+                                -->
+                            </div>
+
+                            <section id="info-panel" style=" margin-right: 60px; margin-top: 90px;  height: 700px; position: absolute; width: 400px; z-index: 8; right: 0; top: 0; background: #fff; padding: 10px; ">
+                                <div id="info-box" style="background: #fff; margin: 10px; ">
+                                    <span id="info-box-close-button" class="icon--close" style="position: static; float: right;">
+                                        <button id="close_info" style="border-width: 0px; background-color: #fff">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </span>
+                                    <div class="title" style="box-sizing: border-box; -moz-box-sizing: border-box; color: #000; font-size: 12pt; padding: 0px 0 0; width: calc(100% - 20px); font-weight: 700; text-transform: uppercase;">Pole Data</div>
+
+
+
+                                    <hr class="title-bar-bottom">
+
+                                    <div id="info-box-scroller">
+                                        <div id="info-box-content">
+                                            <p>
+                                                <span class="info-box-field-label">Voltage:</span>
+                                                <span class="info-box-field-value" id="voltage">Low Voltage</span>
+                                            </p>
+                                            <p>
+                                                <span class="info-box-field-label"># of Crossarms:</span>
+                                                <span class="info-box-field-value" id="numCrossarms"></span>
+                                            </p>
+                                            <p>
+                                                <span class="info-box-field-label"># of Insulators:</span>
+                                                <span class="info-box-field-value" id="numInsulator"></span>
+                                            </p>
+                                            <p>
+                                                <span class="info-box-field-label">Last Maintaince Event:</span>
+                                                <span class="info-box-field-value" id="maintDate"></span>
+                                            </p>
+                                            <p>
+                                                <span class="info-box-field-label">Pole ID:</span>
+                                                <span class="info-box-field-value" id="pole_id">1</span>
+                                            </p>
+                                            <p>
+                                                <span class="info-box-field-label">Lat/Lng</span>
+                                                <span class="info-box-field-value" id="pole_coord"></span>
+                                            </p>
+                                            <p>
+                                                <span class="info-box-field-label">Issue</span>
+                                                <span class="info-box-field-value" id="issue"></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="container" style="width: 100%;  padding: 2px; display: block;">
+                                         <div style="width: 85%;  display: block; margin-left: auto; margin-right: auto;">
+                                             <!-- Full-width images with number text -->
+                                             <div id="slides" class="mySlides" style="display: block; text-align: center">
+
+                                                 <img id="image_slide" src="" style="width: 85%; ">
+
+                                             </div>
+                                             <canvas id="myCanvas"  style="display: none"></canvas>
+                                         </div>
+                                         <!-- Next and previous buttons -->
+                                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                                     </div>
+                                    
+                                            
+
+                                        </div>
+
+
+                                    </div>
+                            </section>
+
+                        </div>
+                    </div>
+                
+
+            <!-- ============================================================== -->
+            <!-- -->
+            <!-- ============================================================== -->
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="white-box">
+                        <h3 class="box-title">Customers Outages</h3>
+                        <div class="d-md-flex">
+                            <ul class="list-inline d-flex ml-auto">
+                                <li class="pl-3">
+                                    <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Number of Customers</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="ct-visits" style="height: 405px;">
+                            <div class="chartist-tooltip" style="top: -17px; left: -12px;">
+                                <span class="chartist-tooltip-value">6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!--  -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    <div class="white-box">
+                        <div class="d-md-flex mb-3">
+                            <h3 class="box-title mb-0">Recent Reports</h3>
+                            <div class="col-md-3 col-sm-4 col-xs-6 ml-auto">
+                                <select class="form-control row border-top">
+                                    <option>November 2020</option>
+                                    <option>October 2020</option>
+                                    <option>September 2020</option>
+                                    <option>August 2020</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table no-wrap">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th class="border-top-0">Submitted By</th>
+                                        <th class="border-top-0">Status</th>
+                                        <th class="border-top-0">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                       
+                                        <td class="txt-oflo">Jon</td>
+                                        <td>Good</td>
+                                        <td class="txt-oflo">November 15, 2020</td>
+                                    </tr>
+                                    <tr>
+                                       
+                                        <td class="txt-oflo">Stephen</td>
+                                        <td>Issue</td>
+                                        <td class="txt-oflo">November 14, 2020</td>
+                                    </tr>
+                                    <tr>
+                                      
+                                        <td class="txt-oflo">Matt</td>
+                                        <td>Good</td>
+                                        <td class="txt-oflo">November 14, 2020</td>
+                                    </tr>
+                                    <tr>
+                                       
+                                        <td class="txt-oflo">Yash</td>
+                                        <td>Good</td>
+                                        <td class="txt-oflo">November 13, 2020</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- Recent Comments -->
+            <!-- ============================================================== -->
+          
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!--Wave Effects-->
+    <script src="js/waves.js"></script>
+
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
+
+
+    <!-- Bootstrap tether Core JavaScript -->
+    <!-- google maps api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXilRnHK49WaB5KmhqgXwcscbodxc5g0s&callback=initMap&libraries=&v=weekly" defer></script>
+    <script src="plugins/bower_components/gmaps/gmaps.min.js"></script>
+    <script src="plugins/bower_components/gmaps/jquery.gmaps.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

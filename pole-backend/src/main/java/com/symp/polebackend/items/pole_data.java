@@ -49,11 +49,15 @@ public class pole_data {
         this.issue = issue;
     }
 
-//    public pole_data(String last_maintenance_date, ArrayList<String> pole_names) {
-//        this.coordinates = new double[2];
-//        this.last_maintenance_date = last_maintenance_date;
-//        this.pole_names = new ArrayList<>();
-//    }
+    public pole_data(double[] coordinates,String last_maintenance_date) {
+        this.coordinates = coordinates;
+        this.last_maintenance_date = last_maintenance_date;
+        this.pole_names = new ArrayList<>();
+        this.voltage = "low";
+        this.crossarm = -1;
+        this.insulator = -1;
+        this.issue = 0;
+    }
 
     public double[] getCoordinates() {
         return coordinates;
@@ -77,5 +81,9 @@ public class pole_data {
 
     public void setPole_names(List<String> pole_names) {
         this.pole_names = pole_names;
+    }
+
+    public void addPole_name(String pole_name) {
+        this.pole_names.add(pole_name);
     }
 }

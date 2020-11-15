@@ -8,10 +8,10 @@ public class Pole {
 
     public Pole() {}
 
-//    public Pole(long id, pole_data pole_data) {
-//        this.id = id;
-//        this.pole_data = pole_data;
-//    }
+    public Pole(long id, pole_data pole_data) {
+        this.id = id;
+        this.pole_data = pole_data;
+    }
 
     public long getId() {
         return id;

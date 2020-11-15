@@ -42,7 +42,7 @@ $(function() {
 */
 
 let map;
-var base_URL = 'http://187e5f2f3ea8.ngrok.io/';
+var base_URL = 'http://98b3fb4a38a3.ngrok.io/';
 var img_names
 var num_imgs
 async function initMap() {
@@ -248,7 +248,7 @@ function showSlides(n) {
 
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    url = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex - 1];
+    url = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex - 1] + '.json';
 
     fetch(proxyurl + url).then(function (response) {
         // response.json() returns a promise, use the same .then syntax to work with the results

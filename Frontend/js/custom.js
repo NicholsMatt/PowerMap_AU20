@@ -153,6 +153,7 @@ getCoords()
          img_names = loc_json[id].pole_data.pole_names; 
          console.log(img_names)
          showSlides(1);
+         console.log(loc_json[id].pole_data.coordinates[0])
          ////////////////////////////////////////////////
 
 
@@ -163,15 +164,20 @@ getCoords()
 
 
             ////////////////////////////////////////////////
-
-
-
-
+         document.getElementById("pole_id").innerHTML = id + 1;
+         document.getElementById("voltage").innerHTML = loc_json[id].pole_data.voltage + ' voltage';
+         document.getElementById("numInsulator").innerHTML = loc_json[id].pole_data.insulator ;
+         document.getElementById("numCrossarms").innerHTML = loc_json[id].pole_data.crossarm;
+         document.getElementById("pole_coord").innerHTML = trunct(loc_json[id].pole_data.coordinates[0]) + '' + trunct(loc_json[id].pole_data.coordinates[1]) + '';
          unhidePanel(id);
     });
   }
 }
-
+function trunct(coord) {
+    var num = coord
+    var with2Decimals = num.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0]
+    return with2Decimals
+}
 
 async function getCoords() {
     const polesURL = base_URL + 'poles';
@@ -246,7 +252,7 @@ function showSlides(n) {
     //captionText.innerHTML = dots[slideIndex - 1].alt;
 
 
-
+   /*
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     url = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex - 1] + '.json';
 
@@ -266,14 +272,13 @@ function showSlides(n) {
 
             ////////////////////////////////////////////////
 
-            document.getElementById("pole_id").innerHTML = id+1;
-            document.getElementById("voltage").innerHTML = poledata.image.fov;
+           
             
         });
         //.then(response => response.text())
         //.then(contents => console.log(contents))
     }).catch(() => console.log("Can't access " + url))
-
+    */
 
 
 }

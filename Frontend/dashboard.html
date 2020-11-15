@@ -12,12 +12,12 @@
     <title></title>
     <link rel="canonical" href="" />
     <!-- Favicon icon -->
+    
     <!-- Custom CSS -->
     <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -248,7 +248,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Network Map</h3>
+                            <h3 class="box-title">Simple Basic Map</h3>
                             <div id="map" class="gmaps" style="height: 750px; position: relative; overflow: hidden;">
 
                                 <!--
@@ -260,7 +260,7 @@
         -->
                             </div>
 
-                            <section id="info-panel" style=" margin-right: 60px; margin-top: 90px;  height: 700px; position: absolute; width: 400px; z-index: 8; right: 0; top: 0; background: #fff; padding: 10px; ">
+                            <section id="info-panel" style=" margin-right: 60px; margin-top: 90px;  height: 650px; position: absolute; width: 400px; z-index: 8; right: 0; top: 0; background: #fff; padding: 10px; ">
                                 <div id="info-box" style="background: #fff; margin: 10px; ">
                                     <span id="info-box-close-button" class="icon--close" style="position: static; float: right;">
                                         <button id="close_info" style="border-width: 0px; background-color: #fff">
@@ -268,39 +268,42 @@
                                         </button>
                                     </span>
                                     <div class="title" style="box-sizing: border-box; -moz-box-sizing: border-box; color: #000; font-size: 12pt; padding: 0px 0 0; width: calc(100% - 20px); font-weight: 700; text-transform: uppercase;">Pole Data</div>
-
-
-
+                                    
+                                    
+                                    
                                     <hr class="title-bar-bottom">
-
+                                    
                                     <div id="info-box-scroller">
                                         <div id="info-box-content">
-                                            <p>
-                                                <span class="info-box-field-label">Voltage:</span>
-                                                <span class="info-box-field-value" id="voltage">High Voltage</span>
-                                            </p>
-                                            <p>
-                                                <span class="info-box-field-label">Voltage:</span>
-                                                <span class="info-box-field-value" id="voltage">High Voltage</span>
-                                            </p>
-                                            <p>
-                                                <span class="info-box-field-label">Last Maintaince Restoration:</span>
-                                                <span class="info-box-field-value">Nov 14 2020, 2:30 PM ET</span>
-                                            </p>
-                                            <p>
-                                                <span class="info-box-field-label">Cause:</span>
-                                                <span class="info-box-field-value">Planned Maintenance</span>
-                                            </p>
-                                            <p>
-                                                <span class="info-box-field-label">Pole ID:</span>
-                                                <span class="info-box-field-value" id="pole_id">1</span>
-                                            </p>
+                                        <p>
+                                            <span class="info-box-field-label">Voltage:</span>
+                                            <span class="info-box-field-value">Low Voltage</span>
+                                        </p>
+                                        <p>
+                                            <span class="info-box-field-label"># of Crossarms:</span>
+                                            <span class="info-box-field-value" id="numCrossarms"></span>
+                                        </p>
+                                        <p>
+                                            <span class="info-box-field-label"># of Insulators:</span>
+                                            <span class="info-box-field-value" id="numInsulator"></span>
+                                        </p>
+                                        <p>
+                                            <span class="info-box-field-label">Last Maintaince Restoration:</span>
+                                            <span class="info-box-field-value" id="maintDate"></span>
+                                        </p>
+                                        <p>
+                                            <span class="info-box-field-label">Reason for Maintenance:</span>
+                                            <span class="info-box-field-value" id="maintReason"></span>
+                                        </p>
+                                        <p>
+                                            <span class="info-box-field-label">Pole ID:</span>
+                                            <span class="info-box-field-value" id="pole_id">1</span>
+                                        </p>
                                         </div>
                                     </div>
-                                    <!--
-                                    <div style="width: 70%;  display: block; margin-left: auto; margin-right: auto;">
-                                        <img id ="image_prev" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="max-width: 100%; max-height: 100%;"/>
-
+                                    <div style="width: 200px; position: center">
+                                        <img src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="max-width: 100%; max-height: 100%;"/>
+                                        
 
 
 
@@ -311,52 +314,30 @@
                                                 <div id="info-box-mag" class="info-label" sc-message>test1</div>
                                                 <span class="icon-Chevron"></span>
                                             </button>
+
+                                            <!-- THIS IS THE GPS AND DATE THAT GOES UNDER THE IMAGE-->
+                                            <p>
+                                                <span class="info-box-field-label">Lat/Lng</span>
+                                                <span class="info-box-field-value" id="pole_coord"></span>
+
+                                            </p>
+
+                                            <a href="https://www.aepohio.com/outages/" target="_blank" sc-ga-event="Infobox Get Status & Alerts">
+                                                <button id="info-box-info" sc-message>
+                                                    <div id="info-box-more-info" class="info-label" sc-message>tests</div>
+                                                    <span class="icon-Chevron"></span>
+                                                </button>
+                                            </a>
+                                            <button id="info-box-bookmark" sc-message sc-ga-event="Infobox Bookmark">
+                                                <div id="info-box-bookmark-title" class="info-label" sc-message>test2</div>
+                                                <span class="icon-Chevron"></span>
+                                            </button>
                                             <button id="info-box-clear" sc-message sc-ga-event="Infobox Clear Element">
                                                 <div id="info-box-clear-title" class="info-label" sc-message>test3</div>
                                                 <span class="icon-Chevron"></span>
                                             </button>
                                         </div>
                                     </div>
-                                    -->
-                                    <div class="container" style="width: 100%;  padding: 2px; display: block;">
-                                        <div  style="width: 85%;  display: block; margin-left: auto; margin-right: auto;">
-                                        <!-- Full-width images with number text -->
-                                        <div id="slides" class="mySlides" style="display: block">
-                                            
-                                            <img id="image_slide" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%">
-                                        </div>
-                                            </div>
-                                        <!-- Next and previous buttons -->
-                                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                                        
-
-                                        <!-- Thumbnail images -->
-                                        <!--
-                                        <div class="row">
-                                            <div class="column">
-                                                <img class="demo cursor" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%" onclick="currentSlide(1)" >
-                                            </div>
-                                            <div class="column">
-                                                <img class="demo cursor" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%" onclick="currentSlide(2)" >
-                                            </div>
-                                            <div class="column">
-                                                <img class="demo cursor" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%" onclick="currentSlide(3)" >
-                                            </div>
-                                            <div class="column">
-                                                <img class="demo cursor" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%" onclick="currentSlide(4)" >
-                                            </div>
-                                            <div class="column">
-                                                <img class="demo cursor" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%" onclick="currentSlide(5)">
-                                            </div>
-                                            <div class="column">
-                                                <img class="demo cursor" src="https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg" style="width:100%" onclick="currentSlide(6)">
-                                            </div>
-                                        </div>
-                                        -->
-                                    </div>
-
 
                                 </div>
                             </section>
@@ -373,12 +354,14 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="white-box">
-                        <h3 class="box-title">Customer Outages</h3>
+                        <h3 class="box-title">Products Yearly Sales</h3>
                         <div class="d-md-flex">
                             <ul class="list-inline d-flex ml-auto">
-                               
                                 <li class="pl-3">
-                                    <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Number of Customers</h5>
+                                    <h5><i class="fa fa-circle m-r-5 text-info"></i>Mac</h5>
+                                </li>
+                                <li class="pl-3">
+                                    <h5><i class="fa fa-circle m-r-5 text-inverse"></i>Windows</h5>
                                 </li>
                             </ul>
                         </div>
@@ -566,7 +549,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer text-center">
-            
+            2020 © Ample Admin brought to you by <a href="https://www.wrappixel.com/">wrappixel.com</a>
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->

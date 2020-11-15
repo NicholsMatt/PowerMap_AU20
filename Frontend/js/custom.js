@@ -77,6 +77,9 @@ async function initMap() {
       lowVoltage: {
           icon: "images/lowVoltage.png",
       },
+      highVoltage: {
+          icon: "images/highVoltage.png",
+      },
   };
     /*
   const features = [

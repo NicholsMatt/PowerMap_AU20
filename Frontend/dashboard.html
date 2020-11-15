@@ -277,19 +277,23 @@
                                         <div id="info-box-content">
                                         <p>
                                             <span class="info-box-field-label">Voltage:</span>
-                                            <span class="info-box-field-value" id="voltage">High Voltage</span>
+                                            <span class="info-box-field-value">Low Voltage</span>
                                         </p>
                                         <p>
-                                            <span class="info-box-field-label">Voltage:</span>
-                                            <span class="info-box-field-value">High Voltage</span>
+                                            <span class="info-box-field-label"># of Crossarms:</span>
+                                            <span class="info-box-field-value" id="numCrossarms"></span>
+                                        </p>
+                                        <p>
+                                            <span class="info-box-field-label"># of Insulators:</span>
+                                            <span class="info-box-field-value" id="numInsulator"></span>
                                         </p>
                                         <p>
                                             <span class="info-box-field-label">Last Maintaince Restoration:</span>
-                                            <span class="info-box-field-value">Nov 14 2020, 2:30 PM ET</span>
+                                            <span class="info-box-field-value" id="maintDate"></span>
                                         </p>
                                         <p>
-                                            <span class="info-box-field-label">Cause:</span>
-                                            <span class="info-box-field-value">Planned Maintenance</span>
+                                            <span class="info-box-field-label">Reason for Maintenance:</span>
+                                            <span class="info-box-field-value" id="maintReason"></span>
                                         </p>
                                         <p>
                                             <span class="info-box-field-label">Pole ID:</span>
@@ -310,6 +314,13 @@
                                                 <div id="info-box-mag" class="info-label" sc-message>test1</div>
                                                 <span class="icon-Chevron"></span>
                                             </button>
+
+                                            <!-- THIS IS THE GPS AND DATE THAT GOES UNDER THE IMAGE-->
+                                            <p>
+                                                <span class="info-box-field-label">Lat/Lng</span>
+                                                <span class="info-box-field-value" id="pole_coord"></span>
+
+                                            </p>
 
                                             <a href="https://www.aepohio.com/outages/" target="_blank" sc-ga-event="Infobox Get Status & Alerts">
                                                 <button id="info-box-info" sc-message>

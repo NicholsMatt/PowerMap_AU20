@@ -187,7 +187,11 @@ function unhidePanel( id) {
             //set overall data for pole
 
             document.getElementById("pole_id").innerHTML = id;
-            document.getElementById("voltage").innerHTML = poledata.image.fov;
+            document.getElementById("numCrossarms").innerHTML = esri_data.assets.crossarm;
+            document.getElementById("numInsulators").innerHTML = poledata.image.insulator;
+            document.getElementById("maintReason").innerHTML = poledata.image.maintReason;
+            document.getElementById("maintDate").innerHTML = last_maintenance_date;
+            document.getElementById("pole_coord").innerHTML = { lat: loc_json[i].pole_data.coordinates[0], lng: loc_json[i].pole_data.coordinates[1] };
             console.log(poledata)
         });
         //.then(response => response.text())

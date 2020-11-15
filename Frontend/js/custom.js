@@ -42,11 +42,19 @@ $(function() {
 */
 
 let map;
-var base_URL = 'http://98b3fb4a38a3.ngrok.io/';
+var base_URL = 'http://b7077333526b.ngrok.io/';
 var img_names
+//var img_boxes
+var img_boxes = [
+    [1088,0,3441, 424],
+    [517, 330, 3612, 999],
+    [92, 804, 3794, 1459],
+    [85, 1035, 3807, 1667]
+];
 var num_imgs
-async function initMap() {
+$(async function initMap() {
     hidePanel()
+    //showSlides(1);
   //Central Ohio location
   const centralOhio = {lat: 39.960770, lng: -82.999038};
 
@@ -128,7 +136,7 @@ getCoords()
     */
    // await request();
   //Create markers
-    console.log('test1');
+    //console.log('test1');
     for (let i = 0; i < loc_json.length; i++){
         
         var b = loc_json[i].pole_data.coordinates[0];
@@ -158,8 +166,16 @@ getCoords()
          showSlides(1);
          console.log(loc_json[id].pole_data.coordinates[0])
          ////////////////////////////////////////////////
+         //try {
+         //    img_boxes = loc_json[id].pole_data.img_boxes;
+         //} catch (error) {
+         //    console.error(error);
+         //    // expected output: ReferenceError: nonExistentFunction is not defined
+         //    // Note - error messages will vary depending on browser
+         //    img_boxes = undefined;
+         //}
 
-
+         
 
             //use this area for getting data on a per pole basis
 
@@ -167,6 +183,8 @@ getCoords()
 
 
             ////////////////////////////////////////////////
+         document.getElementById("maintDate").innerHTML = loc_json[id].pole_data.last_maintenance_date;
+         document.getElementById("issue").innerHTML = loc_json[id].pole_data.issue;
          document.getElementById("pole_id").innerHTML = id + 1;
          document.getElementById("voltage").innerHTML = loc_json[id].pole_data.voltage + ' voltage';
          document.getElementById("numInsulator").innerHTML = loc_json[id].pole_data.insulator ;
@@ -175,7 +193,7 @@ getCoords()
          unhidePanel(id);
     });
   }
-}
+})
 function trunct(coord) {
     var num = coord
     var with2Decimals = num.toString().match(/^-?\d+(?:\.\d{0,6})?/)[0]
@@ -242,11 +260,67 @@ function showSlides(n) {
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("demo");
     var captionText = document.getElementById("caption");
-    
+    var canvas2 = document.getElementById('myCanvas');
+    var context2 = canvas2.getContext('2d');
+
     if (n > num_imgs) { slideIndex = 1 }
     if (n < 1) { slideIndex = num_imgs }
     //console.log(slideIndex);
-    document.getElementById("image_slide").src = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex-1] + '.jpg';
+    if (id != 11) {
+        //document.getElementById("image_slide").style = "display: block; text-align: center"
+        document.getElementById("slides").style.display = "block"
+        document.getElementById("slides").style.textAlign = "center";
+        document.getElementById("image_slide").src = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex - 1] + '.jpg';
+        canvas2.style.display = "none"
+    }
+    else {
+        var canvas2 = document.getElementById('myCanvas');
+        var context2 = canvas2.getContext('2d');
+        document.getElementById("slides").style.display = "none"
+        // var canvas = document.createElement("canvas");
+        //var context = canvas.getContext('2d');
+        //canvas.width = 3000;
+        //canvas.height = 4000;
+        canvas2.width = 250;
+        canvas2.height = 300;
+        canvas2.style.display = "block"
+        var imageObj = new Image();
+        imageObj.src = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex - 1] + '.jpg';
+        //imageObj.src = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.jpg';
+        imageObj.onload = function () {
+            // draw cropped image
+            var sourceX = 1500;
+            var sourceY = 1300;
+            var sourceWidth = 2000;
+            var sourceHeight = 2500;
+            var destWidth = 250;
+            var destHeight = 300;
+            var destX = 50;
+            var destY = 0;
+            console.log(img_boxes[1][3])
+            sourceY = img_boxes[slideIndex - 1][0] -200;
+            sourceX = img_boxes[slideIndex - 1][3]-200;
+            sourceHeight = Math.abs(img_boxes[slideIndex - 1][0] - img_boxes[slideIndex - 1][2])+1000;
+            sourceWidth = Math.abs(img_boxes[slideIndex - 1][3] - img_boxes[slideIndex - 1][1])+400;
+            //context2.drawImage(imageObj, 1500, 1300, 2000, 2000, 0, 0, 300, 400);
+            context2.drawImage(imageObj, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+            //var sourceX = 0;
+            //var sourceY = 0;
+            //var sourceWidth = 400;
+            //var sourceHeight = 400;
+            //var destWidth = 200;
+            //var destHeight = 200;
+            //var destX = 0;
+            //var destY = 0;
+            //context2.drawImage(canvas, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+        };
+    }
+
+
+   
+    
+
+
     //for (i = 0; i < dots.length; i++) {
     //    dots[i].className = dots[i].className.replace(" active", "");
     //}

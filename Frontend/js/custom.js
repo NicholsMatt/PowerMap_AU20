@@ -43,8 +43,10 @@ $(function() {
 
 let map;
 var base_URL = 'http://187e5f2f3ea8.ngrok.io/';
+var img_names
+var num_imgs
 async function initMap() {
-
+    hidePanel()
   //Central Ohio location
   const centralOhio = {lat: 39.960770, lng: -82.999038};
 
@@ -142,9 +144,28 @@ getCoords()
      
      marker.addListener("click", () => {
         //infowindow.open(map, marker);
-         id = marker.get('store_id');
-         console.log(id)
-        
+         id = marker.get('store_id') -1;
+         //console.log('id')
+         //console.log(id)
+         //console.log(loc_json)
+         //console.log(loc_json[id].pole_data)
+         num_imgs = loc_json[id].pole_data.pole_names.length;
+         img_names = loc_json[id].pole_data.pole_names; 
+         console.log(img_names)
+         showSlides(1);
+         ////////////////////////////////////////////////
+
+
+
+            //use this area for getting data on a per pole basis
+
+
+
+
+            ////////////////////////////////////////////////
+
+
+
 
          unhidePanel(id);
     });
@@ -173,35 +194,11 @@ function unhidePanel( id) {
     if (x.style.display === "none") {
         x.style.display = "block";
     } 
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url = "https://osuhackathondata.s3.us-east-2.amazonaws.com/000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76.json"; // site that doesn�t send Access-Control-*
+   
 
-    fetch(proxyurl + url).then(function (response) {
-        // response.json() returns a promise, use the same .then syntax to work with the results
-        response.json().then(function (poledata) {
-            // users is now our actual variable parsed from the json, so we can use it
-            //poledata.forEach(function (data) {
-            //    console.log(user.name)
-            //});
-
-            //set overall data for pole
-
-            document.getElementById("pole_id").innerHTML = id;
-            document.getElementById("voltage").innerHTML = poledata.image.fov;
-            console.log(poledata)
-        });
-        //.then(response => response.text())
-        //.then(contents => console.log(contents))
-        }).catch(() => console.log("Can't access " + url))
-      
-
-       
+        
     };
-
-
 //onclick set specific pole data
-
-
 
 //document.getElementById("close_info").onclick() = function () {
 //    x.style.display == "none"
@@ -211,4 +208,72 @@ document.getElementById("close_info").onclick = function () { hidePanel() };
 
 function hidePanel() {
     document.getElementById("info-panel").style.display = "none";
+}
+
+
+
+var slideIndex = 1
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+
+}
+
+// Thumbnail image controls
+//function currentSlide(n) {
+//    showSlides(slideIndex = n);
+//}
+
+function showSlides(n) {
+    slideIndex = n;
+    //console.log('img');
+    //console.log(num_imgs);
+    //console.log(img_names);
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    
+    if (n > num_imgs) { slideIndex = 1 }
+    if (n < 1) { slideIndex = num_imgs }
+    //console.log(slideIndex);
+    document.getElementById("image_slide").src = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex-1] + '.jpg';
+    //for (i = 0; i < dots.length; i++) {
+    //    dots[i].className = dots[i].className.replace(" active", "");
+    //}
+
+    //dots[slideIndex - 1].className += " active";
+    //captionText.innerHTML = dots[slideIndex - 1].alt;
+
+
+
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    url = 'https://osuhackathondata.s3.us-east-2.amazonaws.com/' + img_names[slideIndex - 1];
+
+    fetch(proxyurl + url).then(function (response) {
+        // response.json() returns a promise, use the same .then syntax to work with the results
+        response.json().then(function (poledata) {
+            
+
+            ////////////////////////////////////////////////
+
+
+
+            //use this area for getting data on a per image basis
+
+
+
+
+            ////////////////////////////////////////////////
+
+            document.getElementById("pole_id").innerHTML = id+1;
+            document.getElementById("voltage").innerHTML = poledata.image.fov;
+            
+        });
+        //.then(response => response.text())
+        //.then(contents => console.log(contents))
+    }).catch(() => console.log("Can't access " + url))
+
+
+
 }

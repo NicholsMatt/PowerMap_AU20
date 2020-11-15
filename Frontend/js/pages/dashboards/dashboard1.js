@@ -7,10 +7,10 @@ $(function () {
 
     //ct-visits
     new Chartist.Line('#ct-visits', {
-        labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+        labels: ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October'],
         series: [
-            [5, 2, 7, 4, 5, 3, 5, 4]
-            , [2, 5, 2, 6, 2, 5, 2, 4]
+            [50, 200, 70, 4, 50, 30, 500, 40,10,100]
+            
         ]
     }, {
         top: 0,
@@ -22,7 +22,7 @@ $(function () {
         ],
         axisY: {
             labelInterpolationFnc: function (value) {
-                return (value / 1) + 'k';
+                return (value / 1) + '';
             }
         },
         showArea: true

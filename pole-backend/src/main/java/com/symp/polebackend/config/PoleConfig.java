@@ -13,20 +13,35 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 @EnableMongoRepositories(basePackageClasses = PoleRepo.class)
 @Configuration
 public class PoleConfig {
 
-//    @Bean
-//    CommandLineRunner commandLineRunner(PoleRepo poleRepo) {
-//        return new CommandLineRunner() {
-//            @Override
-//            public void run(String... args) throws Exception {
-////                poleRepo.save(new Pole(1, -83.0472, 39.9969));
-//
-//                ObjectMapper mapper = new ObjectMapper();
-//                TypeReference<Pole> typeReference = new TypeReference<Pole>() {};
+    @Bean
+    CommandLineRunner commandLineRunner(PoleRepo poleRepo) {
+        return new CommandLineRunner() {
+            @Override
+            public void run(String... args) throws Exception {
+//                poleRepo.deleteAll();
+
+                ObjectMapper mapper = new ObjectMapper();
+                TypeReference<List<Pole>> typeReference = new TypeReference<List<Pole>>() {};
+                InputStream inputStream = TypeReference.class.getResourceAsStream("/json/poles_data.json");
+
+                try {
+                    List<Pole> poles = mapper.readValue(inputStream, typeReference);
+
+                    for (Pole p : poles) {
+                        poleRepo.save(p);
+                    }
+
+                } catch (IOException e) {
+                    System.out.println("Unable to add poles: " + e.getMessage());
+                }
+
+
 //
 //                File[] files = new File("src/main/resources/json").listFiles();
 //
@@ -40,10 +55,10 @@ public class PoleConfig {
 //                        System.out.println("Unable to save users: " + e.getMessage());
 //                    }
 //                }
-//
-//
-//            }
-//        };
-//    }
+
+
+            }
+        };
+    }
 
 }

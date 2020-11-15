@@ -7,8 +7,28 @@ public class pole_data {
 
     private double[] coordinates;
     private String last_maintenance_date;
-    private List<String> pole_names;
+    private int crossarm;
+    private int insulator;
+
+    public int getCrossarm() {
+        return crossarm;
+    }
+
+    public void setCrossarm(int crossarm) {
+        this.crossarm = crossarm;
+    }
+
+    public int getInsulator() {
+        return insulator;
+    }
+
+    public void setInsulator(int insulator) {
+        this.insulator = insulator;
+    }
+
     private String voltage;
+    private List<String> pole_names;
+
     private int issue;
 
     public pole_data() {}

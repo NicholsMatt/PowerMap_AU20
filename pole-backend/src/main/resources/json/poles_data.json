@@ -1,0 +1,331 @@
+[
+    {
+        "id": 1,
+        "pole_data": {
+            "coordinates": [
+                -83.02443364075569,
+                39.98667099793264
+            ],
+            "last_maintenance_date": "05/01/2019",
+            "crossarm": 1,
+            "insulator": 3,
+            "voltage": "low",
+            "pole_names": [
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-43",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-35",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-32",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-45",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-33",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-47",
+                "000092-frontleft-95202c2c-a94e-40ad-b6a9-06596d7e7930-71",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-37",
+                "000089-backleft-96a92a47-5432-49a7-88e2-6283808f46d5-40"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "pole_data": {
+            "coordinates": [
+                -83.07446445729232,
+                39.9975377793844
+            ],
+            "last_maintenance_date": "11/14/2019",
+            "crossarm": 1,
+            "insulator": 3,
+            "voltage": "low",
+            "pole_names": [
+                "000070-backleft-0d9c19d7-3b84-4944-8874-877bcb58938d-44",
+                "000070-backleft-0d9c19d7-3b84-4944-8874-877bcb58938d-49",
+                "000070-backleft-0d9c19d7-3b84-4944-8874-877bcb58938d-35",
+                "000070-backleft-0d9c19d7-3b84-4944-8874-877bcb58938d-43",
+                "000070-backleft-0d9c19d7-3b84-4944-8874-877bcb58938d-37",
+                "000070-backleft-0d9c19d7-3b84-4944-8874-877bcb58938d-41"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "pole_data": {
+            "coordinates": [
+                -83.18363389048474,
+                39.949715268222775
+            ],
+            "last_maintenance_date": "10/02/2019",
+            "crossarm": 2,
+            "insulator": 5,
+            "voltage": "low",
+            "pole_names": [
+                "000098-backright-0309786f-8ee5-45a0-9058-748f848d8527-53",
+                "000098-backright-0309786f-8ee5-45a0-9058-748f848d8527-54",
+                "000098-backright-0309786f-8ee5-45a0-9058-748f848d8527-58",
+                "000098-backright-0309786f-8ee5-45a0-9058-748f848d8527-59",
+                "000098-backright-0309786f-8ee5-45a0-9058-748f848d8527-55",
+                "000028-backleft-ad0366b1-c25b-4db5-973a-1e6a0b773839-68",
+                "000028-backleft-ad0366b1-c25b-4db5-973a-1e6a0b773839-64",
+                "000098-backright-0309786f-8ee5-45a0-9058-748f848d8527-51"
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "pole_data": {
+            "coordinates": [
+                -83.07549341577287,
+                39.99856219320816
+            ],
+            "last_maintenance_date": "04/05/2019",
+            "crossarm": 1,
+            "insulator": 3,
+            "voltage": "low",
+            "pole_names": [
+                "000067-backright-708ee8c6-4182-4fac-8e0c-e6d99c7d98b3-67",
+                "000059-frontright-5a0dc126-0d41-428b-b666-b9351229ead8-57",
+                "000050-frontleft-e7da0033-ef07-4ee4-b01c-c87c5da12637-27",
+                "000050-frontleft-e7da0033-ef07-4ee4-b01c-c87c5da12637-24",
+                "000067-backright-708ee8c6-4182-4fac-8e0c-e6d99c7d98b3-69",
+                "000050-frontleft-e7da0033-ef07-4ee4-b01c-c87c5da12637-22"
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "pole_data": {
+            "coordinates": [
+                -83.07487609999723,
+                39.99832340492861
+            ],
+            "last_maintenance_date": "09/20/2019",
+            "crossarm": 0,
+            "insulator": 0,
+            "voltage": "low",
+            "pole_names": [
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-22",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-19",
+                "000041-frontright-9005b614-8f10-40e3-9e6d-744c44142042-54",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-12",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-24",
+                "000041-frontright-9005b614-8f10-40e3-9e6d-744c44142042-64",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-13",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-10",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-11",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-20",
+                "000049-backright-f768a13f-57a5-402c-b2a4-16cc880d669e-17"
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "pole_data": {
+            "coordinates": [
+                -83.06166551758234,
+                39.98938095928276
+            ],
+            "last_maintenance_date": "12/24/2019",
+            "crossarm": 2,
+            "insulator": 4,
+            "voltage": "low",
+            "pole_names": [
+                "000086-backleft-b15e1c8a-4ecf-448b-99da-1d18b478c053-74",
+                "000102-frontleft-4e3747a7-2cb6-4e4f-89f1-a7ec7c1ae95e-32",
+                "000102-frontleft-4e3747a7-2cb6-4e4f-89f1-a7ec7c1ae95e-27",
+                "000099-backleft-46a03023-3bbf-4f87-a9cd-2f928efda3e8-55",
+                "000140-frontleft-e91e9c57-04f3-4849-8bc0-c043107b94d2-22",
+                "000130-backleft-b187776a-a492-433b-a88d-73ab9b7ef63e-61",
+                "000099-backleft-46a03023-3bbf-4f87-a9cd-2f928efda3e8-58"
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "pole_data": {
+            "coordinates": [
+                -83.17941221349473,
+                39.94988474261101
+            ],
+            "last_maintenance_date": "08/11/2019",
+            "crossarm": 2,
+            "insulator": 6,
+            "voltage": "low",
+            "pole_names": [
+                "000099-backright-d7bb1a56-4fcf-4eed-8f88-cb24f8d2a74d-64",
+                "000099-backright-d7bb1a56-4fcf-4eed-8f88-cb24f8d2a74d-68",
+                "000029-frontleft-93f98683-2000-4455-bb0c-a4eba5d4e8b6-25",
+                "000029-frontleft-93f98683-2000-4455-bb0c-a4eba5d4e8b6-18",
+                "000099-backright-d7bb1a56-4fcf-4eed-8f88-cb24f8d2a74d-63",
+                "000029-frontleft-93f98683-2000-4455-bb0c-a4eba5d4e8b6-23",
+                "000029-frontleft-93f98683-2000-4455-bb0c-a4eba5d4e8b6-19",
+                "000099-backright-d7bb1a56-4fcf-4eed-8f88-cb24f8d2a74d-61",
+                "000099-backright-d7bb1a56-4fcf-4eed-8f88-cb24f8d2a74d-70",
+                "000029-frontleft-93f98683-2000-4455-bb0c-a4eba5d4e8b6-26"
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "pole_data": {
+            "coordinates": [
+                -83.07428543174713,
+                39.99732158167331
+            ],
+            "last_maintenance_date": "08/14/2019",
+            "crossarm": 1,
+            "insulator": 3,
+            "voltage": "low",
+            "pole_names": [
+                "000049-backleft-524306ee-e5dd-4ad0-849f-5184cd136922-7",
+                "000060-frontright-ddb51e87-f61e-4468-9c42-b71f8008d39e-43",
+                "000049-backleft-524306ee-e5dd-4ad0-849f-5184cd136922-26",
+                "000114-backright-850e176e-2411-4667-ad0a-fe07363e35e6-31",
+                "000114-backright-850e176e-2411-4667-ad0a-fe07363e35e6-37",
+                "000068-backright-feda8db3-a4c2-4f8e-bb2c-1e3fa105f809-60"
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "pole_data": {
+            "coordinates": [
+                -83.02580774202096,
+                39.99119986598729
+            ],
+            "last_maintenance_date": "02/17/2019",
+            "crossarm": 2,
+            "insulator": 3,
+            "voltage": "low",
+            "pole_names": [
+                "000086-backleft-713d288d-d622-4f86-81d2-70eb17dd68e6-52",
+                "000090-frontleft-38344973-ee7d-4bca-a871-10749f8c08e2-27",
+                "000090-frontleft-38344973-ee7d-4bca-a871-10749f8c08e2-26",
+                "000086-backleft-713d288d-d622-4f86-81d2-70eb17dd68e6-45",
+                "000090-frontleft-38344973-ee7d-4bca-a871-10749f8c08e2-23",
+                "000090-frontleft-38344973-ee7d-4bca-a871-10749f8c08e2-19",
+                "000086-backleft-713d288d-d622-4f86-81d2-70eb17dd68e6-46"
+            ]
+        }
+    },
+    {
+        "id": 10,
+        "pole_data": {
+            "coordinates": [
+                -83.06287112034799,
+                39.98963567560133
+            ],
+            "last_maintenance_date": "06/18/2019",
+            "crossarm": 2,
+            "insulator": 4,
+            "voltage": "low",
+            "pole_names": [
+                "000126-backleft-31c1e143-a607-48d8-8a93-009ca4c945c0-58",
+                "000086-backleft-b15e1c8a-4ecf-448b-99da-1d18b478c053-19",
+                "000126-backleft-31c1e143-a607-48d8-8a93-009ca4c945c0-48",
+                "000126-backleft-31c1e143-a607-48d8-8a93-009ca4c945c0-47",
+                "000126-backleft-31c1e143-a607-48d8-8a93-009ca4c945c0-50",
+                "000135-frontleft-70e792e0-5b99-426f-bddd-8f8e0ff122f2-3"
+            ]
+        }
+    },
+    {
+        "id": 11,
+        "pole_data": {
+            "coordinates": [
+                -83.03932372780122,
+                40.00719218435091
+            ],
+            "last_maintenance_date": "01/31/2019",
+            "crossarm": 1,
+            "insulator": 1,
+            "voltage": "low",
+            "pole_names": [
+                "000039-backright-f0eb60dc-a427-4cc6-b6bf-519525395ddb-5",
+                "000039-backright-f0eb60dc-a427-4cc6-b6bf-519525395ddb-2",
+                "000039-backright-f0eb60dc-a427-4cc6-b6bf-519525395ddb-3",
+                "000039-backright-f0eb60dc-a427-4cc6-b6bf-519525395ddb-11",
+                "000039-backright-f0eb60dc-a427-4cc6-b6bf-519525395ddb-1",
+                "000038-backright-cf13a7dc-bd6f-4c6f-9b14-7eedce690b0e-77"
+            ]
+        }
+    },
+    {
+        "id": 12,
+        "pole_data": {
+            "coordinates": [
+                -82.8633134360025,
+                40.062487545912745
+            ],
+            "last_maintenance_date": "07/22/2019",
+            "crossarm": 1,
+            "insulator": 1,
+            "voltage": "low",
+            "pole_names": [
+                "000034-frontright-f706fa40-5385-4ac2-a123-b6c6ba404532-100",
+                "000034-frontright-f706fa40-5385-4ac2-a123-b6c6ba404532-107",
+                "000034-frontright-f706fa40-5385-4ac2-a123-b6c6ba404532-106"
+            ]
+        }
+    },
+    {
+        "id": 13,
+        "pole_data": {
+            "coordinates": [
+                -83.03474204013368,
+                39.99693913242474
+            ],
+            "last_maintenance_date": "07/02/2019",
+            "crossarm": 3,
+            "insulator": 7,
+            "voltage": "low",
+            "pole_names": [
+                "000016-backleft-f31bc370-bca7-44c7-8969-1cd1220ba103-41",
+                "000013-frontleft-c8ca2732-9b5a-4493-ae44-9e0fc916bf6e-53",
+                "000122-frontleft-513b1938-17fe-4297-adc7-c006d2420f1f-80",
+                "000122-frontleft-513b1938-17fe-4297-adc7-c006d2420f1f-75",
+                "000111-backleft-f3fe60a7-5d7f-4945-9596-ed7bb512fb13-21",
+                "000123-frontleft-0645e17c-00ed-4ee8-969d-e78d44e1021d-7"
+            ]
+        }
+    },
+    {
+        "id": 14,
+        "pole_data": {
+            "coordinates": [
+                -83.07507841628431,
+                39.99814910947032
+            ],
+            "last_maintenance_date": "01/21/2019",
+            "crossarm": 2,
+            "insulator": 3,
+            "voltage": "low",
+            "pole_names": [
+                "000060-frontright-ddb51e87-f61e-4468-9c42-b71f8008d39e-2",
+                "000060-frontright-ddb51e87-f61e-4468-9c42-b71f8008d39e-4",
+                "000049-frontleft-9df5132f-850c-4512-b0a6-20e0571fc541-57",
+                "000113-backright-d3ce3277-2a54-44f2-8dd1-4c765edccf11-73",
+                "000060-frontright-ddb51e87-f61e-4468-9c42-b71f8008d39e-17",
+                "000059-frontright-5a0dc126-0d41-428b-b666-b9351229ead8-65",
+                "000060-frontright-ddb51e87-f61e-4468-9c42-b71f8008d39e-0"
+            ]
+        }
+    },
+    {
+        "id": 15,
+        "pole_data": {
+            "coordinates": [
+                -82.86456906501846,
+                39.91868883204806
+            ],
+            "last_maintenance_date": "02/02/2019",
+            "crossarm": 2,
+            "insulator": 4,
+            "voltage": "low",
+            "pole_names": [
+                "000035-backright-6cb332de-fd92-458c-9d5c-88bf10df79d0-9",
+                "000022-backright-1bc2c0be-60d3-423a-b02f-cc6875044ae3-1",
+                "000017-frontright-01d0eebe-41ed-4c78-9cbb-f7cb24e27d1e-1",
+                "000016-frontright-75220dd2-9f0d-4f9d-aa34-1589729cf07a-130",
+                "000021-backright-639fa59c-4288-4915-8c61-0f5c1d837c0f-124",
+                "000006-backleft-43a7932a-33b1-4ca6-af1a-fad37fbeecaa-76"
+            ]
+        }
+    }
+]
